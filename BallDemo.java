@@ -35,7 +35,14 @@ public class BallDemo
      */
     public void boxBounce()
     {
-        // you must implement this
+        BoxBall demoBall =  new BoxBall (200,275,24,Color.magenta,box,myCanvas);
+        demoBall.draw();
+        
+        while(true)
+        {
+            demoBall.move();
+            box.draw();
+        }
     }
     
     /**
