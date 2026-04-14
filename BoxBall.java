@@ -92,7 +92,7 @@ public class BoxBall
     public void move()
     {
         // remove from canvas at the current position
-        canvas.wait(50);
+        canvas.wait(2);
         erase();
         // compute new position
   

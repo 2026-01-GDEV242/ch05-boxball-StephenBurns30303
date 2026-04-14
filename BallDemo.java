@@ -69,7 +69,7 @@ public class BallDemo
         //ball bouncing        
         while(true)
         {
-            myCanvas.wait(1);
+            myCanvas.wait(2);
             box.draw();
             for(BoxBall ballMove : ballPile)
             {
