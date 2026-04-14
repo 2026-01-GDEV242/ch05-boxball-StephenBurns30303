@@ -37,7 +37,8 @@ public class BallDemo
     public void boxBounce(int ballNumber)
     {
         Random rand=new Random();
-        
+        int xInstan;
+        int yInstan;
         
         
         if(ballNumber<5 || ballNumber>50)
@@ -48,17 +49,31 @@ public class BallDemo
         
         BoxBall[] ballPile=new BoxBall[ballNumber];
         
-        
 
         myCanvas.setVisible(true);
-        
+        //ball creation
+        for(int i=0; i<ballPile.length; i++)
+        {
+            
+            //RGB ranges from 0 to 255
+            
+            Color randoRgb= new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+            
+            yInstan=(int)(Math.random()*(box.getBottomWall()-box.getTopWall())+box.getTopWall());
+            xInstan=(int)(Math.random()*(box.getRightWall()-box.getLeftWall())+box.getTopWall());
+            
+            ballPile[i]=new BoxBall(xInstan,yInstan,0,randoRgb,box,myCanvas);
+            
+            ballPile[i].draw();
+        }
+        //ball bouncing        
         while(true)
         {
-            myCanvas.wait(10);
+            myCanvas.wait(1);
             box.draw();
-            for(BoxBall ballCreate : ballPile)
+            for(BoxBall ballMove : ballPile)
             {
-                ballCreate.move();
+                ballMove.move();
             }
         }
 
