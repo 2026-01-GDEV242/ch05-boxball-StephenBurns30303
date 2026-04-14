@@ -1,11 +1,12 @@
 import java.awt.Color;
-
+import java.util.Random;
 /**
  * Class BallDemo - a short demonstration showing animation with the 
  * Canvas class. 
  *
  * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author Stephen M. Burns
+ * @version 2026.04.13
  */
 
 public class BallDemo   
@@ -33,16 +34,34 @@ public class BallDemo
      * 
      * @param numOfBalls number of balls to simulate bouncing, clamped between 5-50. 
      */
-    public void boxBounce()
+    public void boxBounce(int ballNumber)
     {
-        BoxBall demoBall =  new BoxBall (200,275,24,Color.magenta,box,myCanvas);
-        demoBall.draw();
+        Random rand=new Random();
+        
+        
+        
+        if(ballNumber<5 || ballNumber>50)
+        {
+            ballNumber=rand.nextInt((50-5+1)+5);
+            System.out.println("Your number fell outside the range, so a proper number was generated");
+        }
+        
+        BoxBall[] ballPile=new BoxBall[ballNumber];
+        
+        
+
+        myCanvas.setVisible(true);
         
         while(true)
         {
-            demoBall.move();
+            myCanvas.wait(10);
             box.draw();
+            for(BoxBall ballCreate : ballPile)
+            {
+                ballCreate.move();
+            }
         }
+
     }
     
     /**
