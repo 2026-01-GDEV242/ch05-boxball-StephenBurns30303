@@ -19,7 +19,7 @@ import java.util.Random;
  * @author David J. Barnes
  * @author Bruce Quig
  * @author William Crosbie
- * @author Stephen Burns 
+ * @author Stephen M . Burns
  * @version 2025.10.06
  */
 
@@ -54,18 +54,19 @@ public class BoxBall
         yPosition = yPos;
         color = ballColor;
         diameter = ballDiameter;
+        canvas = drawingCanvas;
+        myBox= box;
         xSpeed=(int)(Math.random()*15)-7;
         ySpeed=(int)(Math.random()*15)-7;
-        while(xSpeed ==0)
-        {
-            xSpeed =(int)(Math.random()*15)-7;            
-        }
         
-        while(ySpeed ==0)
+        while(xSpeed==0)
         {
-            ySpeed =(int)(Math.random()*15)-7;
+            xSpeed=(int)(Math.random()*15)-7;
         }
-        canvas = drawingCanvas;
+        while(ySpeed==0)
+        {
+            ySpeed=(int)(Math.random()*15)-7;            
+        }
     }
 
     /**
