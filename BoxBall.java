@@ -19,8 +19,8 @@ import java.util.Random;
  * @author David J. Barnes
  * @author Bruce Quig
  * @author William Crosbie
- * @author Stephen Burns
- * @version 2026.13.04
+ * @author Stephen Burns 
+ * @version 2025.10.06
  */
 
 public class BoxBall
@@ -54,9 +54,17 @@ public class BoxBall
         yPosition = yPos;
         color = ballColor;
         diameter = ballDiameter;
-        myBox= box;
-        xSpeed=3;
-        ySpeed=3;
+        xSpeed=(int)(Math.random()*15)-7;
+        ySpeed=(int)(Math.random()*15)-7;
+        while(xSpeed ==0)
+        {
+            xSpeed =(int)(Math.random()*15)-7;            
+        }
+        
+        while(ySpeed ==0)
+        {
+            ySpeed =(int)(Math.random()*15)-7;
+        }
         canvas = drawingCanvas;
     }
 
@@ -68,15 +76,6 @@ public class BoxBall
         canvas.setForegroundColor(color);
         canvas.fillCircle(xPosition, yPosition, diameter);
     }
-    
-    /**
-     * @param int ballNumber the number of balls created when this method is run.
-     */
-    public void boxBounce(int ballNumber)
-    {
-        
-    }
-    
 
     /**
      * Erase this ball at its current position.
