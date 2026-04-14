@@ -62,7 +62,7 @@ public class BallDemo
             yInstan=(int)(Math.random()*(box.getBottomWall()-box.getTopWall())+box.getTopWall());
             xInstan=(int)(Math.random()*(box.getRightWall()-box.getLeftWall())+box.getTopWall());
             
-            ballPile[i]=new BoxBall(xInstan,yInstan,0,randoRgb,box,myCanvas);
+            ballPile[i]=new BoxBall(xInstan,yInstan,10,randoRgb,box,myCanvas);
             
             ballPile[i].draw();
         }
