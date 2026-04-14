@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.geom.*;
+import java.util.Random;
 
 /**
  * Class BoxBall - a graphical ball that moves similar to the ball in PONG.
@@ -18,8 +19,8 @@ import java.awt.geom.*;
  * @author David J. Barnes
  * @author Bruce Quig
  * @author William Crosbie
- *
- * @version 2025.10.06
+ * @author Stephen Burns
+ * @version 2026.13.04
  */
 
 public class BoxBall
@@ -34,6 +35,7 @@ public class BoxBall
     private Canvas canvas;
     private int ySpeed;         // vertical speed
     private int xSpeed;         // horizontal speed
+    
 
     /**
      * Constructor for objects of class BoxBall
@@ -66,6 +68,15 @@ public class BoxBall
         canvas.setForegroundColor(color);
         canvas.fillCircle(xPosition, yPosition, diameter);
     }
+    
+    /**
+     * @param int ballNumber the number of balls created when this method is run.
+     */
+    public void boxBounce(int ballNumber)
+    {
+        
+    }
+    
 
     /**
      * Erase this ball at its current position.
